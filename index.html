@@ -48,6 +48,10 @@
         analytics.identify('1234', {
             email: email, 
             name: fullname
+        },
+        {integrations:{
+        'Hubspot' : false}
+        
         });
            analytics.track('destination submitted', user, function() {
             window.location.href = "";
