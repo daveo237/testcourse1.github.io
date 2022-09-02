@@ -28,7 +28,7 @@
     <br><br> 
     Email: <input name="email" required="" size="75" type="email"/> 
     <br><br>
-   Number: <input name="number" require= "" size="75" type="number"/>
+   Number: <input name="Phone" require= "" size="75" type="number"/>
     <br><br>  
     <input name="submit" type="submit" value="submit"/>
 </form> 
@@ -40,7 +40,7 @@
         var form = e.target;
         var email = form["email"].value;
         var fullname = form["fullname"].value;
-        var Phone = form["number"].value;
+        var Phone = form["Phone"].value;
         var destination = form["destination"].value;
         var details = form["details"].value;
         var user = {
@@ -48,7 +48,7 @@
             name: fullname, 
             destination: destination, 
             details: details,
-        number : Phone
+        Phone : Phone
         };
         analytics.identify('1234', {
             email: email, 
