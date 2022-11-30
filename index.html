@@ -11,6 +11,17 @@
   analytics.page();
   }}();
 </script>
+    
+    Analytics.prototype.ready = function(fn: Function): SegmentAnalytics {
+  if (is.fn(fn)) {
+    if (this._readied) {
+      nextTick(fn);
+    } else {
+      this.once('ready', fn);
+    }
+  }
+  return this;
+};
 
 </head> 
      <p> 
