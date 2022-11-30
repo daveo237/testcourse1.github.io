@@ -10,9 +10,8 @@
   analytics.load("QcrbDHXn80pT2xaO7qduGkap9zAysimJ");
   analytics.page();
   }}();
-</script>
     
-    Analytics.prototype.ready = function(fn: Function): SegmentAnalytics {
+     Analytics.prototype.ready = function(fn: Function): SegmentAnalytics {
   if (is.fn(fn)) {
     if (this._readied) {
       nextTick(fn);
@@ -22,6 +21,9 @@
   }
   return this;
 };
+</script>
+    
+   
 
 </head> 
      <p> 
