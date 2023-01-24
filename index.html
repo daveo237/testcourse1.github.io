@@ -62,26 +62,24 @@ analytics.trackLink(link, 'Clicked Free-Trial Link', {
 </form> 
    
 
-     <script type="text/javascript">
+<script type="text/javascript">
       function identify(e){
         e.preventDefault();
         var form = e.target;
         var email = form["email"].value;
         var fullname = form["fullname"].value;
-        var phone = form["phone"].value;
         var destination = form["destination"].value;
         var details = form["details"].value;
         var user = {
             email: email, 
             name: fullname, 
             destination: destination, 
-            details: details,
-        phone : phone
+            details: details
         };
-        analytics.identify('1234', {
+        analytics.identify('1234next', {
             email: email, 
             name: fullname
-        )},
+        });
         {integrations:{
             "All": true,
             "Segment.io": true,
