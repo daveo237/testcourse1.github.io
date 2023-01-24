@@ -80,12 +80,7 @@ analytics.trackLink(link, 'Clicked Free-Trial Link', {
             email: email, 
             name: fullname
         });
-        {integrations:{
-            "All": true,
-            "Segment.io": true,
-        "HubSpot" : true}
-        
-        });
+       
            analytics.track('destination submitted', user, function() {
             window.location.href = "";
         });
