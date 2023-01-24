@@ -1,51 +1,71 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@daveo237 
+daveo237
+/
+testcourse1.github.io
+Public
+Fork your own copy of daveo237/testcourse1.github.io
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+testcourse1.github.io/index.html
+@daveo237
+daveo237 Update index.html
+Latest commit b899117 last week
+ History
+ 1 contributor
+104 lines (86 sloc)  3.94 KB
 
+
+<!DOCTYPE html> 
 <html> 
 <head> 
-
     <title>Home Questionnaire<span id="selection-marker-1" class="redactor-selection-marker"></span></title> 
+    <meta name="google-site-verification" content="fAZkGgXRd68WcEI1yJkKtuFB8XIzXDkejvsf9tAGcTE" />
 
-	
-<!-- SEGMENT-->
-	
 <script>
-  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="G5BwWiwo7E5XCw85h43neqDn59j6KCTp";;analytics.SNIPPET_VERSION="4.15.3";
-  analytics.load("G5BwWiwo7E5XCw85h43neqDn59j6KCTp" 
-//,{
-  //user: {
-    //persist: true,
-    //cookie: {
-     // key: 'ajs_user_id_new'
-    //},
-    //localStorage: {
-      //key: 'ajs_user_traits'
-    //}
-  //}
-//}
-		);
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="QcrbDHXn80pT2xaO7qduGkap9zAysimJ";;analytics.SNIPPET_VERSION="4.15.3";
+  analytics.load("QcrbDHXn80pT2xaO7qduGkap9zAysimJ");
   analytics.page();
   }}();
+    
+  analytics.ready(function() {
+
+
+  window.mixpanel.set_config({ verbose: true });
+    
+  };
 </script>
-
-<!-- SEGMENT-->
-
+    
+   
 
 </head> 
+     <p> 
+        <a id ="free-trial-link" href> Tracklink test<a/>
+                </p>
+    
+   
+                <script>
 
-<body>
-
-	
-	
-<!-- SEGMENT TRACKLINK-->	
-<p><a id="free-trial-link" href="">TrackLink Test</a></p>
-<script>
 var link = document.getElementById('free-trial-link');
 analytics.trackLink(link, 'Clicked Free-Trial Link', {
   plan: 'Enterprise'
 });
-</script>	
-<!-- SEGMENT TRACKLINK-->
-	
-
+                   
+        </script>
 <body> 
 <h1>What is your favorite place to travel?</h1> 
 <p>I am building a directory of the sweetest travel destinations.</p>  
@@ -68,30 +88,47 @@ analytics.trackLink(link, 'Clicked Free-Trial Link', {
 </form> 
    
 
-<script type="text/javascript">
+     <script type="text/javascript">
       function identify(e){
         e.preventDefault();
         var form = e.target;
         var email = form["email"].value;
         var fullname = form["fullname"].value;
+        var phone = form["phone"].value;
         var destination = form["destination"].value;
         var details = form["details"].value;
         var user = {
             email: email, 
             name: fullname, 
             destination: destination, 
-            details: details
+            details: details,
+        phone : phone
         };
-        analytics.identify('1234next', {
+        analytics.identify('1234', {
             email: email, 
             name: fullname
+        },
+        {integrations:{
+            "All": true,
+            "Segment.io": true,
+        "HubSpot" : true}
+        
         });
-       
            analytics.track('destination submitted', user, function() {
             window.location.href = "";
         });
+          
+          window.addMiddlewares = function () {
+  window.analytics.addSourceMiddleware(smw8);
+  //window.analytics.addSourceMiddleware(smw7);
+  window.analytics.addSourceMiddleware(smw6);
+  window.analytics.addSourceMiddleware(smw1);
+  window.analytics.addSourceMiddleware(smw2);
+  window.analytics.addSourceMiddleware(smw3);
+  window.analytics.addSourceMiddleware(smw4);
+  window.analytics.addSourceMiddleware(smw5);
+};
       }
-         
 </script>
 
 </body> 
