@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html> 
 <html> 
 <head> 
@@ -11,16 +10,18 @@
   analytics.load("QcrbDHXn80pT2xaO7qduGkap9zAysimJ");
   analytics.page();
   }}();
-    
-  analytics.ready(function() {
-
-
-  window.mixpanel.set_config({ verbose: true });
-    
-  });
 </script>
     
-   
+    Analytics.prototype.ready = function(fn: Function): SegmentAnalytics {
+  if (is.fn(fn)) {
+    if (this._readied) {
+      nextTick(fn);
+    } else {
+      this.once('ready', fn);
+    }
+  }
+  return this;
+};
 
 </head> 
      <p> 
@@ -29,12 +30,10 @@
     
    
                 <script>
-
 var link = document.getElementById('free-trial-link');
-analytics.trackLink(link, 'Clicked Free-Trial Link', {
-  plan: 'Enterprise'
-});
-                   
+                    analytics.trackLink(link, 'Clicked free-trial-link',{
+                        plan: 'Enterprise'
+                    });
         </script>
 <body> 
 <h1>What is your favorite place to travel?</h1> 
@@ -79,9 +78,7 @@ analytics.trackLink(link, 'Clicked Free-Trial Link', {
             name: fullname
         },
         {integrations:{
-            "All": true,
-            "Segment.io": true,
-        "HubSpot" : true}
+        "HubSpot" : false}
         
         });
            analytics.track('destination submitted', user, function() {
