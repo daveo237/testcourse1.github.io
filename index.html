@@ -77,12 +77,11 @@ var link = document.getElementById('free-trial-link');
            /* email: email, */
             name: fullname
         },
-        {integrations:{
-        "All" : false,
-        "Google Analytics 4 Web" : true
-            }
-        
-        });
+       integrations: {
+    'All': false,
+    'Google Analytics 4 Web': true
+  }
+});
            analytics.track('destination submitted', user, function() {
             window.location.href = "";
         });
