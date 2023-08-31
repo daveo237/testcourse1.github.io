@@ -1,6 +1,8 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
+    
+    var enabled = optimizelyClientInstance.isFeatureEnabled('test', userId);
     <title>Home Questionnaire<span id="selection-marker-1" class="redactor-selection-marker"></span></title> 
     <meta name="google-site-verification" content="fAZkGgXRd68WcEI1yJkKtuFB8XIzXDkejvsf9tAGcTE" />
 
@@ -10,7 +12,6 @@
   analytics.page();
   }}();
 
-    var enabled = optimizelyClientInstance.isFeatureEnabled('test', userId);
 </script>
     <script>
     Analytics.prototype.ready = function(fn: Function): SegmentAnalytics {
@@ -25,6 +26,7 @@
 };
 </script>
 </head> 
+    
      <p> 
         <a id ="free-trial-link" href> Tracklink test<a/>
                 </p>
