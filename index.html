@@ -1,58 +1,38 @@
+
 <!DOCTYPE html> 
 <html> 
 <head> 
-    
 
     <title>Home Questionnaire<span id="selection-marker-1" class="redactor-selection-marker"></span></title> 
-    <meta name="google-site-verification" content="fAZkGgXRd68WcEI1yJkKtuFB8XIzXDkejvsf9tAGcTE" />
-
+	
+<!-- SEGMENT Optimizely-->
+<script src="https://cdn.optimizely.com/js/15303960539.js"></script>
+<!-- SEGMENT Optimizely-->
+	
+<!-- SEGMENT-->
 <script>
-    
-    analytics.ready(function() {
-    window.gtag('consent', 'default', {
-        'ad_storage': 'granted',
-        'ad_user_data': 'granted',
-        'ad_personalization': 'granted',
-        'analytics_storage': 'granted'
-    });
-});
-  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="QcrbDHXn80pT2xaO7qduGkap9zAysimJ";;analytics.SNIPPET_VERSION="4.15.3";
-  analytics.load("QcrbDHXn80pT2xaO7qduGkap9zAysimJ");
-  analytics.page();
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){if(window.analytics.initialized)return window.analytics[e].apply(window.analytics,arguments);var i=Array.prototype.slice.call(arguments);i.unshift(e);analytics.push(i);return analytics}};for(var i=0;i<analytics.methods.length;i++){var key=analytics.methods[i];analytics[key]=analytics.factory(key)}analytics.load=function(key,i){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=i};analytics._writeKey="G5BwWiwo7E5XCw85h43neqDn59j6KCTp";;analytics.SNIPPET_VERSION="4.16.1";
+  analytics.load("G5BwWiwo7E5XCw85h43neqDn59j6KCTp");
+  /* MODIFIED SECTION */
+  // Hey did Optimizely set an effective referrer?
+  if (window.optimizelyEffectiveReferrer) var referrer = window.optimizelyEffectiveReferrer;
+
+  // If they did, override the document.referrer
+  referrer ? analytics.page({ referrer: referrer }):analytics.page();
+  /* MODIFIED SECTION */
   }}();
-
 </script>
-    <script>
+<!-- SEGMENT-->
 
-        var enabled = optimizelyClientInstance.isFeatureEnabled('test', userId);
-    var user = optimizelyClientInstance.createUserContext(userId, attributes);
-    user.trackEvent('pageview');
-    Analytics.prototype.ready = function(fn: Function): SegmentAnalytics {
-  if (is.fn(fn)) {
-    if (this._readied) {
-      nextTick(fn);
-    } else {
-      this.once('ready', fn);
-    }
-  }
-  return this;
-};
-</script>
+
 </head> 
-    
-     <p> 
-        <a id ="free-trial-link" href> Tracklink test<a/>
-                </p>
-    
-   
-                <script>
-var link = document.getElementById('free-trial-link');
-                    analytics.trackLink(link, 'Clicked free-trial-link',{
-                        plan: 'Enterprise'
-                    });
-        </script>
-         <script type="text/javascript" src="https://cdn.segment.com/next-integrations/middleware/analytics.js-middleware-braze-deduplicate/latest/analytics.js-middleware-braze-deduplicate.js.gz" async="" status="loaded"></script>
-<body> 
+
+<body>
+
+
+	
+
+	
 <h1>What is your favorite place to travel?</h1> 
 <p>I am building a directory of the sweetest travel destinations.</p>  
 <form name="travel" onsubmit="identify(event)">
@@ -68,43 +48,45 @@ var link = document.getElementById('free-trial-link');
     <br><br> 
     Email: <input name="email" required="" size="75" type="email"/> 
     <br><br>
-   phone: <input name="phone" require= "" size="75" type="tel"/>
-    <br><br>  
     <input name="submit" type="submit" value="submit"/>
 </form> 
-   
 
-     <script type="text/javascript">
+    
+<script type="text/javascript">
       function identify(e){
         e.preventDefault();
         var form = e.target;
-       /* var email = form["email"].value; */
+        var email = form["email"].value;
         var fullname = form["fullname"].value;
-        var phone = form["phone"].value;
         var destination = form["destination"].value;
         var details = form["details"].value;
         var user = {
-            /* email: email, */
+            email: email, 
             name: fullname, 
             destination: destination, 
-            details: details,
-        phone : phone
+            details: details
         };
-        analytics.identify('1234', {
-           /* email: email, */
+        analytics.identify('1234next', {
+            email: email, 
             name: fullname
-        },
-       integrations: {
-
-  }
-});
-           analytics.track('destination submitted', user, function() {
+        });
+        analytics.track('destination submitted', user, function() {
             window.location.href = "";
         });
-          
-          
       }
 </script>
+	
 
+<br>
+<br>
+<button type="button">Try it!</button>
+<br>
+<br>
+<br>
+	
+
+<!-- SEGMENT TRACKLINK-->
+    
+    
 </body> 
 </html>
